@@ -1,0 +1,12 @@
+.footer-custom {
+  background-color: #000; /* hitam */
+}
+
+.footer-custom h6 {
+  margin-bottom: 10px;
+}
+
+.footer-custom p {
+  margin: 0;
+  font-size: 14px;
+}
