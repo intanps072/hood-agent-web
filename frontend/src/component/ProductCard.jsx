@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import "./ProductCard.css"; 
+import "../style/ProductCard.css"; 
 
 function ProductCard({ image, title, price }) {
   return (

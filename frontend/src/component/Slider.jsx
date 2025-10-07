@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 
 function Slider() {
   return (
-    <Carousel>
+    <Carousel style={{ marginTop: "75px" }}>
       {/* Slide 1 */}
       <Carousel.Item>
         <img

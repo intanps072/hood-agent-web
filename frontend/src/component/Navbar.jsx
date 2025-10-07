@@ -1,10 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import "../style/Navbar.css";
 
 function AppNavbar() {
   return (
-    <Navbar  className="shadow-sm" expand="lg" fixed="top" style={{ backgroundColor: "#CB3B0F" }}>
+    <Navbar  className="shadow-sm" expand="lg" fixed="top" style={{ backgroundColor: "rgba(203, 59, 15, 0.9)" }}>
       <Container>
         {/* Logo */}
         <Navbar.Brand href="#">
@@ -22,27 +24,46 @@ function AppNavbar() {
 
         <Navbar.Collapse id="basic-navbar-nav">
           {/* Menu tengah */}
-          <Nav className="me-auto mx-auto" style={{ fontWeight: 'bold', fontSize: '18px' }}>
-            <Nav.Link href="#" style={{color: "white"}} className="me-4" >Our Story</Nav.Link>
-            <Nav.Link href="#" style={{color: "white"}} className="me-4" >Catalog</Nav.Link>
-            <Nav.Link href="#" style={{color: "white"}} className="me-4" >Generations</Nav.Link>
-            <Nav.Link href="#" style={{color: "white"}} > Divisions</Nav.Link>
+          <Nav className="me-auto mx-auto" variant="pills" style={{ fontWeight: 'bold', fontSize: '18px'}}>
+            <Nav.Link as={NavLink} to='/OurStory' className="me-4"
+              defaultActiveKey="/OurStory"  
+                  style={({ isActive }) => ({
+                  backgroundColor: isActive ? "#ffae00" : "transparent",
+                  color: isActive ? "white" : "#ffffffff",
+                  borderRadius: "8px",
+                  transition: "0.3s ease",
+                  })}>
+                Our Story</Nav.Link>
+
+            <Nav.Link as={NavLink} to='/Catalog' className="me-4"
+              defaultActiveKey="/Catalog" style={{color: "white"}} >
+                Catalog</Nav.Link>
+
+            <Nav.Link as={NavLink} to='/Event' className="me-4"
+              defaultActiveKey="/Event" style={{color: "white"}} >
+                Event</Nav.Link>
+                
+            <Nav.Link as={NavLink} to='/Divisions' 
+              defaultActiveKey="/Divisions" style={{color: "white"}} >
+                Divisions</Nav.Link>
           </Nav>
 
           {/* Button kanan */}
             <div className="d-flex">
               {/* Login: putih outline hitam */}
               <Button variant="outline-dark" className="me-2">
-                Login
+                <a href="/Login" style={{ textDecoration: "none", color: "black" }}>
+                  Login
+                </a>
               </Button>
 
               {/* Sign-up: hitam solid */}
               <Button variant="dark">
-                Sign-up
+                <a href="/Signup" style={{ textDecoration: "none", color: "white" }}>
+                  Sign-up
+                </a>
               </Button>
             </div>
-
-
         </Navbar.Collapse>
       </Container>
     </Navbar>

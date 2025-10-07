@@ -1,0 +1,23 @@
+
+/* Warna dasar (ketika tidak aktif) */
+.nav-pills .nav-link {
+  color: #333;                /* Warna teks normal */
+  background-color: transparent;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* Warna saat hover */
+.nav-pills .nav-link:hover {
+  background-color: rgba(203, 59, 15, 0.15); /* Warna oranye transparan */
+  color: #ffae00;
+}
+
+/* Warna saat aktif */
+.nav-pills .nav-link.active {
+  background-color: #ffae00;  
+  color: #fff !important;     
+  font-weight: 600;
+  border-radius: 8px;
+}
+
