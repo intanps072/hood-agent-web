@@ -9,7 +9,7 @@ function AppNavbar() {
     <Navbar  className="shadow-sm" expand="lg" fixed="top" style={{ backgroundColor: "rgba(203, 59, 15, 0.9)" }}>
       <Container>
         {/* Logo */}
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img
               src="./logo HA.png"  
               alt="Logo"
@@ -26,13 +26,7 @@ function AppNavbar() {
           {/* Menu tengah */}
           <Nav className="me-auto mx-auto" variant="pills" style={{ fontWeight: 'bold', fontSize: '18px'}}>
             <Nav.Link as={NavLink} to='/OurStory' className="me-4"
-              defaultActiveKey="/OurStory"  
-                  style={({ isActive }) => ({
-                  backgroundColor: isActive ? "#ffae00" : "transparent",
-                  color: isActive ? "white" : "#ffffffff",
-                  borderRadius: "8px",
-                  transition: "0.3s ease",
-                  })}>
+              defaultActiveKey="/OurStory"  style={{color: "white"}} >
                 Our Story</Nav.Link>
 
             <Nav.Link as={NavLink} to='/Catalog' className="me-4"

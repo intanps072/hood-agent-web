@@ -1,35 +1,30 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AppNavbar from "./component/Navbar";
-import ProductList from "./component/ProductList";
-import Slider from "./component/Slider";
-import Footer from "./component/InfoContact";
-import OurStory from "./pages/OurStory";
-import Catalog from "./pages/Catalog";
-import Event from "./pages/Event";
-import Divisions from "./pages/Divisions";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import { AppNavbar, Footer } from "./component";
+import { Home, OurStory, Catalog, Event, Divisions, Login, Signup } from "./pages";
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <AppNavbar />
-        <Routes>
-          <Route path="/OurStory" element={<OurStory />} />
-          <Route path="/Catalog" element={<Catalog />} />
-          <Route path="/Event" element={<Event />} />
-          <Route path="/Divisions" element={<Divisions />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Signup" element={<Signup />} />
-        </Routes>
-      <Slider />
-      <ProductList />
-        <div className="d-flex justify-content-center">
-          <img src = "./Map/Map.gif" alt="Map" style={{ width: '80%', marginTop: '20px', marginBottom: '20px'}} />
-        </div>
-      <Footer />
+      <div className="App">
+        <AppNavbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/OurStory" element={<OurStory />} />
+            <Route path="/Catalog" element={<Catalog />} />
+            <Route path="/Event" element={<Event />} />
+            <Route path="/Divisions" element={<Divisions />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
+            <Route path="*" element={<h2 className="text-center mt-5">404 - Page Not Found</h2>} />
+          </Routes>
+          <Footer />
+        </main>
+      </div>
       </Router>
+      
   );
 }
 
