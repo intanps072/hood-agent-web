@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/Logo.svg"; 
 import "../style/Navbar.css";
 
 function AppNavbar() {
@@ -11,10 +12,10 @@ function AppNavbar() {
         {/* Logo */}
         <Navbar.Brand href="/">
           <img
-              src="./logo HA.png"  
+              src={logo}  
               alt="Logo"
-              width="50"        
-              height="50"       
+              width="auto"        
+              height="55"       
               className="d-inline-block align-top"
           />
         </Navbar.Brand>

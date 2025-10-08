@@ -8,12 +8,12 @@ function Home() {
       <Slider />
       <ProductList />
       <Slider2/>
-      <div className="d-flex justify-content-center">
+      <div className="my-5 text-align-center">
         <h3 className="text-center mb-4">Our Location Ordered</h3>
         <img
-          src="/Map/Map.gif"  
+          src="/Map/Map Location.gif"  
           alt="Store Location Map"
-          style={{ width: "80%", marginTop: "20px", marginBottom: "20px" }}
+          style={{ width: "80%", justifyContent: "center" }}
         />
       </div>
     </>
