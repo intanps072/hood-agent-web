@@ -1,0 +1,29 @@
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffae00;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* jarak antar logo */
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.payment-methods img {
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 5px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.payment-methods img:hover {
+  transform: scale(1.1);
+}

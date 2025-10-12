@@ -13,7 +13,7 @@ function ProductList() {
     {
       id: 2,
       image: "./Product/PS.jpg",
-      title: "PoloShirt - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+      title: "Poloshirt - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
       price: "259,000",
     },
     {

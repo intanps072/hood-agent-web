@@ -1,21 +1,31 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ProductList, Slider, Slider2 } from "../component";
+import { ProductList, Slider  } from "../component"; // Slider2
 
 function Home() {
   return (
     <>
       <Slider />
-      <ProductList />
-      <Slider2/>
       <div className="my-5 text-align-center">
-        <h3 className="text-center mb-4">Our Location Ordered</h3>
+        <h3 className="text-center mb-4">Those Who Already Trust Us</h3>
         <img
-          src="/Map/Map Location.gif"  
+          src="/Map/NewMap.gif"  
           alt="Store Location Map"
-          style={{ width: "80%", justifyContent: "center" }}
+          className="d-block mx-auto justify-content-center"
+          style={{ width: "80%"}}
         />
       </div>
+      <ProductList />
+
+      <div className="text-center mt-5">
+        <video className="w-600 rounded shadow" controls>
+          <source src="../assets/Promosi.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung video tag.
+        </video>
+      </div>
+
+      {/* <Slider2/> */}
+      
     </>
   );
 }

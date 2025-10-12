@@ -1,7 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaWhatsapp, FaInstagram, FaTiktok, FaShopify } from "react-icons/fa";
+import Logo from "../assets/LOGO.png";
+import QRIS from "../assets/MBayar/QRIS.jpg";
+import BCA from "../assets/MBayar/BCA.jpg";
+import BRI from "../assets/MBayar/BRI.jpg";
+import BNI from "../assets/MBayar/BNI.jpg";
+import MDR from "../assets/MBayar/MDR.jpg";
+import JNE from "../assets/MKirim/JNE.jpg";
+import JNT from "../assets/MKirim/JNT.jpg";
+import SPX from "../assets/MKirim/SPX.jpg";
 import "../style/InfoContact.css";
+
 
 function Footer() {
   return (
@@ -11,6 +21,7 @@ function Footer() {
 
           {/* Sosial Media */}
           <Col md={3} className="mb-3">
+           <img src = {Logo} alt="Logo" width="auto" height="45" className="mb-2"/>
             <div className="d-flex gap-3 fs-4">
               <a
                 href="https://wa.me/6285352546060"
@@ -51,24 +62,39 @@ function Footer() {
           </Col>
 
           {/* Metode Pembayaran */}
+          {/* <Col md={3} className="mb-3">
+          <div className="footer-content">
+            <h6 className="footer-title">METODE PEMBAYARAN</h6>
+              <div className="payment-methods">
+                <img src={QRIS} alt="QRIS" />
+                <img src={BRI} alt="BRI" />
+                <img src={BNI} alt="BNI" />
+                <img src={BCA} alt="BCA" />
+                <img src={MDR} alt="MDR" />
+              </div>
+          </div>
+          </Col>  */}
+
           <Col md={3} className="mb-3">
-            <h6 className="fw-bold">METODE PEMBAYARAN</h6>
-            <p className="mb-1">QRIS</p>
-            <p className="mb-1">BCA</p>
-            <p className="mb-1">BRI</p>
-            <p className="mb-1">Mandiri</p>
+            <h6 className="fw-bold mb-3">METODE PEMBAYARAN</h6>
+                <img src={QRIS} alt="QRIS" style={{ width: '60px', marginRight: '10px', marginBottom :'10px' }} />
+                <img src={BRI} alt="BRI" style={{ width: '60px', marginRight: '10px', marginBottom :'10px' }} />
+                <img src={BNI} alt="BNI" style={{ width: '60px', marginRight: '10px', marginBottom :'10px' }}/>
+                <img src={BCA} alt="BCA" style={{ width: '60px', marginRight: '10px', marginBottom :'10px'}}/>
+                <img src={MDR} alt="MDR" style={{ width: '60px' }}/>
           </Col>
 
           {/* Metode Pengiriman */}
           <Col md={3} className="mb-3">
-            <h6 className="fw-bold">METODE PENGIRIMAN</h6>
-            <p className="mb-1">JNE Express</p>
-            <p className="mb-1">J&T Express</p>
+            <h6 className="fw-bold mb-3" >METODE PENGIRIMAN</h6>
+            <img src = {JNE} alt="JNE" style={{ width: '60px', marginRight: '10px' }} />
+            <img src = {JNT} alt="JNT" style={{ width: '60px', marginRight: '10px' }} />
+            <img src = {SPX} alt="SPX" style={{ width: '60px' }} />
           </Col>
 
           {/* Alamat */}
           <Col md={3} className="mb-3">
-            <h6 className="fw-bold">HOOD AGENT</h6>
+            <h6 className="fw-bold mb-2">HOOD AGENT</h6>
             <p className="mb-1">
               Jl. Pasundan No.4, Kota Kulon, Kec. Garut <br />
               Kota, Kabupaten Garut, Jawa Barat 44112

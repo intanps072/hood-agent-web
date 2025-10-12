@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppNavbar, Footer } from "./component";
 import { Home, OurStory, Catalog, Event, Divisions, Login, Signup } from "./pages";
 import "./App.css";
+import "./index.css";
 
 function App() {
   return (

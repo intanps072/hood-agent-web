@@ -1,24 +1,81 @@
+/* =============================== */
+/* 🔸 Efek Transparan & Scroll 🔸 */
+/* =============================== */
 
+/* Navbar awal (transparan) */
+.navbar-transparent {
+  background-color: transparent !important;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
 
-/* Warna dasar (ketika tidak aktif) */
+/* Navbar setelah discroll (oranye + shadow) */
+.navbar-scrolled {
+  background-color: rgba(203, 59, 15, 0.95) !important; /* oranye khas kamu */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* =============================== */
+/* 🔸 Gaya Link (underline animasi) 🔸 */
+/* =============================== */
 .nav-pills .nav-link {
-  color: #333;                /* Warna teks normal */
-  background-color: transparent;
-  border-radius: 8px;
-  transition: 0.3s ease;
+  color: white !important;
+  background-color: transparent !important;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-/* Warna saat hover */
+/* Garis bawah (underline animasi) */
+.nav-pills .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* posisi di bawah teks */
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 60%;
+  height: 2px;
+  background-color: #ffae00; /* warna oranye underline */
+  transition: transform 0.3s ease;
+}
+
+/* Saat hover */
 .nav-pills .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.15); /* Warna putih transparan */
-  color: #ffae00;
+  color: #ffae00 !important;
 }
 
-/* Warna saat aktif */
+.nav-pills .nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Saat aktif (halaman saat ini) */
 .nav-pills .nav-link.active {
-  background-color: #ffae00;  
-  color: #fff !important;     
+  color: #ffae00 !important;
+  background-color: transparent !important;
   font-weight: 600;
-  border-radius: 8px;
 }
 
+.nav-pills .nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* =============================== */
+/* 🔸 Tombol kanan (Login / Signup) 🔸 */
+/* =============================== */
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+/* =============================== */
+/* 🔸 Responsif & Transisi Umum 🔸 */
+/* =============================== */
+.transition-all {
+  transition: all 0.4s ease-in-out;
+}
