@@ -6,7 +6,10 @@ function ProductCard({ image, title, price }) {
   return (
     <Card className="product-card">
       <div className="image-container">
-        <img src={image} alt={title} className="product-image" />
+        <img 
+        src={image} 
+        alt={title} 
+        className="product-image" />
         <span className="badge-free">Limited</span>
       </div>
       <Card.Body>

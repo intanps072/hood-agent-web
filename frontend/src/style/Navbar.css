@@ -61,16 +61,13 @@
 }
 
 /* =============================== */
-/* 🔸 Tombol kanan (Login / Signup) 🔸 */
+/* 🔸 Tombol kanan (Login & Search) 🔸 */
 /* =============================== */
-button a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button:hover {
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+.login-btn img:hover,
+button img:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+  
 }
 
 /* =============================== */
@@ -79,3 +76,4 @@ button:hover {
 .transition-all {
   transition: all 0.4s ease-in-out;
 }
+
