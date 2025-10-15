@@ -6,24 +6,18 @@ function Home() {
   return (
     <>
       <Slider />
-      
       <ProductList />
-
-      {/* <div className="text-center mt-5">
-        <video className="w-600 rounded shadow" controls>
-          <source src="../assets/Promosi.mp4" type="video/mp4" />
-          Browser Anda tidak mendukung video tag.
-        </video>
-      </div> */}
-
       <Slider2/>
       <div className="my-5 text-align-center">
         <h3 className="text-center mb-4">Those Who Already Trust Us</h3>
+        <p className="text-center text-muted mb-4">
+          Our products are trusted by various communities and law enforcement agencies across Indonesia.
+        </p>
         <img
-          src="/Map/NewMap.gif"  
+          src="/Map/MapNew.gif"  
           alt="Store Location Map"
           className="d-block mx-auto justify-content-center"
-          style={{ width: "80%"}}
+          style={{ width: "100%"}}
         />
       </div>
 

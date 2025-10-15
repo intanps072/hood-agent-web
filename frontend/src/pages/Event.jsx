@@ -1,11 +1,26 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import GambarEvent from "../assets/GambarEvent.png";
+
 const Event = () => {
   return (
-    <div className="container">
-      <h1 className="text-center mt-5">Event</h1>
-      <p className="text-center">Discover our upcoming events and activities.</p>
-    </div>
+    <img
+        src={GambarEvent}
+        alt="Gambar"
+        style={{
+        width: "100vw",     // penuh lebar layar
+        height: "90vh",     // tinggi bisa diatur
+        objectFit: "cover", // isi penuh tanpa distorsi
+        display: "block",   // hilangkan jarak bawaan
+        margin: 0,
+        padding: 0,
+        }}
+        />
+
+        
+      
+
+        
   );
 };
 
