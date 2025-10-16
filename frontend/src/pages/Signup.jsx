@@ -1,75 +1,194 @@
-import React, { useState } from "react";
-import { Form, Button, Card, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Container, Form, Button, Alert, Card } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useAdminAuth } from "../context/AdminAuthContext";
 
-function Signup() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+const AdminRegisterPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const { register, admin } = useAdminAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (admin) {
+      navigate("/admin/dashboard");
+    }
+  }, [admin, navigate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Signup data:", formData);
-    // Tambahkan logika daftar user ke API di sini
+    setError("");
+
+    // Validasi
+    if (!name || !email || !password || !confirmPassword) {
+      setError("Semua field harus diisi");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password minimal 6 karakter");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Password tidak cocok");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Format email tidak valid");
+      return;
+    }
+
+    setIsLoading(true);
+    const result = await register(name, email, password);
+    setIsLoading(false);
+
+    if (result.success) {
+      navigate("/admin/dashboard");
+    } else {
+      setError(result.message);
+    }
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
-      <Card className="p-4 shadow" style={{ width: "400px", borderRadius: "12px" }}>
-        <h3 className="text-center mb-4" style={{ color: "#CB3B0F" }}>Sign Up</h3>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formName" className="mb-3">
-            <Form.Label>Nama Lengkap</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              placeholder="Masukkan nama lengkap"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(to bottom right, #CB3B0F, #FFAE00)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "60px 20px",
+      }}
+    >
+      <Container style={{ maxWidth: "500px" }}>
+        {/* Header */}
+        <div className="text-center mb-5">
+          <h1 className="fw-bold text-white mb-2" style={{ fontSize: "2.5rem" }}>
+            Admin Panel
+          </h1>
+          <p className="text-white-50">Daftar sebagai admin Hood Agent</p>
+        </div>
 
-          <Form.Group controlId="formEmail" className="mb-3">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              placeholder="Masukkan email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+        {/* Form Card */}
+        <Card className="shadow-lg rounded-4 border-0">
+          <Card.Body className="p-4 p-md-5">
+            <h2 className="fw-bold text-dark mb-4">Daftar Admin Baru</h2>
 
-          <Form.Group controlId="formPassword" className="mb-3">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              placeholder="Masukkan password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
+            {error && (
+              <Alert variant="danger" className="mb-4">
+                {error}
+              </Alert>
+            )}
 
-          <Button type="submit" variant="dark" className="w-100" style={{ backgroundColor: "#CB3B0F", border: "none" }}>
-            Daftar
-          </Button>
-        </Form>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label className="fw-semibold">Nama Lengkap</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Masukkan nama lengkap"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="rounded-3"
+                />
+              </Form.Group>
 
-        <p className="text-center mt-3">
-          Sudah punya akun? <a href="/login" style={{ color: "#CB3B0F", textDecoration: "none" }}>Masuk di sini</a>
-        </p>
-      </Card>
-    </Container>
+              <Form.Group className="mb-3">
+                <Form.Label className="fw-semibold">Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="admin@hoodagent.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="rounded-3"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label className="fw-semibold">Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Minimal 6 karakter"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="rounded-3"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-4">
+                <Form.Label className="fw-semibold">Konfirmasi Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Ulangi password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  className="rounded-3"
+                />
+              </Form.Group>
+
+              <div className="d-grid">
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="fw-semibold rounded-3 py-2"
+                  style={{
+                    backgroundColor: "#CB3B0F",
+                    border: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#FFAE00";
+                    e.target.style.color = "#212529";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#CB3B0F";
+                    e.target.style.color = "#fff";
+                  }}
+                >
+                  {isLoading ? "Loading..." : "Daftar"}
+                </Button>
+              </div>
+            </Form>
+
+            {/* Login Redirect */}
+            <div className="text-center mt-4">
+              <p className="text-muted">
+                Sudah punya akun?{" "}
+                <Link to="/admin/login" className="text-decoration-none fw-semibold" style={{ color: "#CB3B0F" }}>
+                  Login
+                </Link>
+              </p>
+            </div>
+
+            {/* Back to Homepage */}
+            <div className="text-center mt-4 pt-3 border-top">
+              <Link
+                to="/"
+                className="text-muted text-decoration-none"
+                style={{ transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.target.style.color = "#CB3B0F")}
+                onMouseLeave={(e) => (e.target.style.color = "#6c757d")}
+              >
+                ← Kembali ke Homepage
+              </Link>
+            </div>
+          </Card.Body>
+        </Card>
+      </Container>
+    </div>
   );
-}
+};
 
-export default Signup;
+export default AdminRegisterPage;

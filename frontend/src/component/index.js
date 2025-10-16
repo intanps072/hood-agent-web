@@ -3,4 +3,7 @@ export { default as Slider } from "./Slider";
 export { default as ProductList } from "./ProductList";
 export { default as Slider2 } from "./Slider2";
 export { default as Footer } from "./InfoContact";
-
+export { default as ScrollToTop } from "./ScrolltoTop";
+export { default as ProductHighlight } from "./ProductHighlight";
+export { default as ProtectedRoute } from "./ProtectedRoute";
+export { default as Testimonials } from "./Testimonials";

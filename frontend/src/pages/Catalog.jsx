@@ -11,63 +11,87 @@ const Products = () => {
   const productsData = [
     {
       id: 1,
-      name: "Hood Agent T-Shirt",
-      category: "Apparel",
+      name: "T-Shirt",
+      category: "T-Shirt",
+      description: "Comfortable cotton t-shirt",
       price: 150000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 2,
-      name: "Hoodie Premium",
-      category: "Apparel",
+      name: "Poloshirt",
+      category: "Poloshirt",
+      description: "Stylish polo shirt",
       price: 350000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 3,
-      name: "Tote Bag Canvas",
-      category: "Accessories",
+      name: "Workshirt",
+      category: "Workshirt",
+      description: "Durable work shirt",
       price: 125000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 4,
-      name: "Sticker Pack",
-      category: "Accessories",
+      name: "Jersey",
+      category: "Jersey",
+      description: "Sporty jersey",
       price: 25000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 5,
-      name: "Cap Snapback",
-      category: "Accessories",
+      name: "Jacket",
+      category: "Jacket",
+      description: "Warm and stylish jacket",
       price: 175000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 6,
-      name: "Notebook A5",
-      category: "Stationery",
+      name: "Bracelet",
+      category: "Accessories",
+      description: "Trendy bracelet",
       price: 75000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 7,
-      name: "Water Bottle",
-      category: "Lifestyle",
+      name: "Pouch Handphone",
+      category: "Accessories",
+      description: "Durable phone pouch",
       price: 95000,
       image: "/api/placeholder/400/400",
     },
     {
       id: 8,
-      name: "Enamel Pin Set",
+      name: "Patch",
       category: "Accessories",
+      description: "Cool embroidered patch",
       price: 50000,
       image: "/api/placeholder/400/400",
     },
+    {
+      id: 9,
+      name: "Brevet",
+      category: "Accessories",
+      description: "Official brevet badge",
+      price: 30000,
+      image: "/api/placeholder/400/400",
+    },
+    {
+      id: 10,
+      name: "Keychain",
+      category: "Accessories",
+      description: "Stylish keychain",
+      price: 10000,
+      image: "/api/placeholder/400/400",
+    }
   ];
 
-  const categories = ["All", "Apparel", "Accessories", "Stationery", "Lifestyle"];
+  const categories = ["All", "T-Shirt", "Poloshirt", "Workshirt", "Jersey", "Jacket", "Accessories"];
 
   const filteredProducts =
     selectedCategory === "All"
@@ -116,13 +140,14 @@ const Products = () => {
             <Button
               key={category}
               variant={
-                selectedCategory === category ? "warning" : "outline-secondary"
+                selectedCategory === category ? "danger" : "outline-secondary"
               }
               className="rounded-pill px-4 fw-semibold"
               onClick={() => setSelectedCategory(category)}
               style={{
                 minWidth: "120px",
                 transition: "all 0.2s ease-in-out",
+                
               }}
             >
               {category}

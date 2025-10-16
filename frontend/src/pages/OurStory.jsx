@@ -46,7 +46,7 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi1 */}
-          <div className="col-12 col-md-6" >
+          <div className="col-12 col-md-6 text-justify">
             <h4 className="mb-3">
               1. Huruf H (Hood)
             </h4>
@@ -68,7 +68,7 @@ const OurStory = () => {
         <div className="row align-items-center mt-4">
 
           {/* Kolom kiri - Deskripsi2 */}
-          <div className="col-12 col-md-6 order-2 order-md-1">
+          <div className="col-12 col-md-6 order-2 order-md-1 text-justify">
             <h4 className="mb-3">
               3. Simbol Bintara Tinggi 
             </h4>
@@ -111,7 +111,7 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi3 */}
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 text-justify">
             <h4 className="mb-3">
               4. Kubah Masjid
             </h4>
@@ -126,7 +126,7 @@ const OurStory = () => {
         <div className="row align-items-center mt-4">
 
           {/* Kolom kiri - Deskripsi4 */}
-          <div className="col-12 col-md-6 order-2 order-md-1">
+          <div className="col-12 col-md-6 order-2 order-md-1 text-justify">
             <h4 className="mb-3">
               5. Gaya Romawi/Klasik 
             </h4>
@@ -167,7 +167,7 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi5 */}
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 text-justify">
             <h4 className="mb-3">
               6. Keseluruhan Komposisi
             </h4>

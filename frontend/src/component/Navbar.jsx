@@ -67,6 +67,15 @@ function AppNavbar() {
             variant="pills"
             style={{ fontWeight: "bold", fontSize: "18px" }}
           >
+             <Nav.Link
+              as={NavLink}
+              to="/"
+              className="me-4 nav-item-link"
+              style={{ color: "white" }}
+            >
+              Home
+            </Nav.Link>
+
             <Nav.Link
               as={NavLink}
               to="/OurStory"
@@ -88,29 +97,27 @@ function AppNavbar() {
             <Nav.Link
               as={NavLink}
               to="/Event"
-              className="me-4 nav-item-link"
+              className="nav-item-link"
               style={{ color: "white" }}
             >
               Event
             </Nav.Link>
-
-            <Nav.Link
-              as={NavLink}
-              to="/Divisions"
-              className="nav-item-link"
-              style={{ color: "white" }}
-            >
-              Division
-            </Nav.Link>
+           
           </Nav>
 
           {/* Tombol kanan */}
           <div className="d-flex align-items-center position-relative">
-            {/* Search Button */}
+          {/* Search Button */}
             <button
               className="btn p-0 me-3"
               onClick={handleSearchClick}
-              style={{ background: "none", border: "none" }}
+
+              style={{
+                background: "none",
+                border: "none",
+                marginLeft: "8px",
+                cursor: "pointer",
+              }}
             >
               <img
                 src={searchIcon}

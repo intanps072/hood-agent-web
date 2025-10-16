@@ -4,34 +4,34 @@ import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import searchIcon from "../assets/Icons/Search.png";
 
-const CrudSearch = () => {
+const ProductSearch = () => {
   const [products, setProducts] = useState([]);
-  const [formData, setFormData] = useState({ name: "", price: "" });
-  const [editId, setEditId] = useState(null);
   const [search, setSearch] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   const location = useLocation();
   const API_URL = "http://localhost:5000/products";
 
-  // 🔹 Ambil query dari URL (contoh: /CrudSearch?query=sepatu)
+  // 🔹 Ambil query dari URL (misal /ProductSearch?query=shirt)
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const query = params.get("query");
-    if (query) {
-      setSearch(query);
-    }
+    if (query) setSearch(query);
   }, [location.search]);
 
-  // 🔹 Load data dari JSON Server
+  // 🔹 Ambil semua produk dari JSON Server
   useEffect(() => {
     getProducts();
   }, []);
 
   const getProducts = async () => {
-    const res = await axios.get(API_URL);
-    setProducts(res.data);
-    setFilteredProducts(res.data);
+    try {
+      const res = await axios.get(API_URL);
+      setProducts(res.data);
+      setFilteredProducts(res.data);
+    } catch (error) {
+      console.error("Gagal mengambil data produk:", error);
+    }
   };
 
   // 🔹 Jalankan filter otomatis jika search berubah
@@ -40,88 +40,28 @@ const CrudSearch = () => {
       setFilteredProducts(products);
     } else {
       const filtered = products.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
+        item.name?.toLowerCase().includes(search.toLowerCase())
       );
       setFilteredProducts(filtered);
     }
   }, [search, products]);
 
-  // Tambah / Update
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (editId) {
-      await axios.put(`${API_URL}/${editId}`, formData);
-      setEditId(null);
-    } else {
-      await axios.post(API_URL, formData);
-    }
-    setFormData({ name: "", price: "" });
-    getProducts();
-  };
-
-  // Hapus
-  const handleDelete = async (id) => {
-    await axios.delete(`${API_URL}/${id}`);
-    getProducts();
-  };
-
-  // Edit
-  const handleEdit = (product) => {
-    setFormData({ name: product.name, price: product.price });
-    setEditId(product.id);
-  };
-
-  // Tombol search di halaman CRUD (bukan di navbar)
+  // 🔹 Klik tombol search
   const handleSearchClick = () => {
     const filtered = products.filter((item) =>
-      item.name.toLowerCase().includes(search.toLowerCase())
+      item.name?.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredProducts(filtered);
   };
 
   return (
     <div className="container mt-5 pt-4">
-      <h2 className="mb-3 text-center">CRUD + Search Produk</h2>
-
-      {/* Form Tambah/Edit */}
-      <form onSubmit={handleSubmit} className="mb-4">
-        <div className="row g-2">
-          <div className="col-md-4">
-            <input
-              type="text"
-              placeholder="Nama Produk"
-              className="form-control"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div className="col-md-3">
-            <input
-              type="number"
-              placeholder="Harga"
-              className="form-control"
-              value={formData.price}
-              onChange={(e) =>
-                setFormData({ ...formData, price: e.target.value })
-              }
-              required
-            />
-          </div>
-          <div className="col-md-2">
-            <button className="btn btn-primary w-100" type="submit">
-              {editId ? "Update" : "Tambah"}
-            </button>
-          </div>
-        </div>
-      </form>
+      <h2 className="mb-4 text-center">Pencarian Produk</h2>
 
       {/* Search Bar */}
       <div
-        className="d-flex mb-3 align-items-center"
-        style={{ maxWidth: "400px" }}
+        className="d-flex mb-4 align-items-center"
+        style={{ maxWidth: "400px", margin: "0 auto" }}
       >
         <input
           type="text"
@@ -129,7 +69,12 @@ const CrudSearch = () => {
           className="form-control"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSearchClick();
+            }
+          }}
         />
         <button
           onClick={handleSearchClick}
@@ -145,50 +90,39 @@ const CrudSearch = () => {
         </button>
       </div>
 
-      {/* Tabel Data */}
-      <table className="table table-bordered table-hover">
-        <thead className="table-dark">
-          <tr>
-            <th>No</th>
-            <th>Nama Produk</th>
-            <th>Harga</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((item, index) => (
-              <tr key={item.id}>
-                <td>{index + 1}</td>
-                <td>{item.name}</td>
-                <td>Rp {item.price.toLocaleString()}</td>
-                <td>
-                  <button
-                    className="btn btn-warning btn-sm me-2"
-                    onClick={() => handleEdit(item)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => handleDelete(item.id)}
-                  >
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="4" className="text-center">
-                Tidak ada produk ditemukan
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      {/* Hasil Pencarian */}
+      <div className="row">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((item) => (
+            <div className="col-md-4 mb-4" key={item.id}>
+              <div className="card h-100 shadow-sm">
+                <img
+                  src={require(`../assets/${item.image}`)} // pastikan file gambar ada di /src/assets/
+                  alt={item.name}
+                  className="card-img-top"
+                  style={{ height: "250px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="text-muted mb-1">{item.category}</p>
+                  <p className="card-text" style={{ fontSize: "14px" }}>
+                    {item.description}
+                  </p>
+                  <h6 className="fw-bold text-primary">
+                    Rp {item.price?.toLocaleString("id-ID")}
+                  </h6>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="text-center mt-4">
+            <p className="fw-semibold">Tidak ada produk ditemukan.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default CrudSearch;
+export default ProductSearch;
