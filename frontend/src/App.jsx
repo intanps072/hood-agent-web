@@ -29,6 +29,13 @@ function App() {
             <Route path="/Signup" element={<Signup />} />
             <Route path="*" element={<h2 className="text-center mt-5">404 - Page Not Found</h2>} />
 
+          </Routes>
+          </AdminAuthProvider>
+          <Footer />
+        </main>
+      </div>
+
+          <Routes>
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route path="/admin/signup" element={<AdminRegisterPage />} />
 
@@ -39,15 +46,12 @@ function App() {
                 <AdminDashboard />
               </ProtectedRoute>
             }
-          />
-            <Route path="products" element={<ProductsManagement />} />
-            <Route path="projects" element={<ProjectsManagement />} />
-            <Route path="events" element={<EventsManagement />} />
+            />
+            <Route path="/products" element={<ProductsManagement />} />
+            <Route path="/projects" element={<ProjectsManagement />} />
+            <Route path="/events" element={<EventsManagement />} />            
           </Routes>
-          </AdminAuthProvider>
-          <Footer />
-        </main>
-      </div>
+
       </Router>
       
   );

@@ -9,9 +9,12 @@ function Home() {
       <ProductHighlight />
       <ProductList />
       <Slider2 />
-      <div className="my-5 text-align-center">
-        <h3 className="text-center mb-4">Those Who Already Trust Us</h3>
-        <p className="text-center text-muted mb-4">
+      <Testimonials />
+      <div className="my-5 text-center">
+        <h2 className="fw-bold display-5 mb-3">
+            Those Who <span style={{ color: "#CB3B0F" }}>Already Trust Us</span>
+          </h2>
+        <p className="text-muted mb-4">
           Our products are trusted by various communities and law enforcement agencies across Indonesia.
         </p>
         <img
@@ -22,7 +25,7 @@ function Home() {
         />
         
       </div>
-      <Testimonials />
+      
     </>
   );
 }

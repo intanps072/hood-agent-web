@@ -26,10 +26,12 @@ const OurStory = () => {
         }}
       />
 
-      <h1 className="mt-5 text-center">Hood Agent Logo Philosophy</h1>
+      <h2 className="fw-bold display-5 text-dark text-center mt-5">
+          Hood Agent <span style={{ color: "#CB3B0F" }}>Logo Philosophy</span>
+      </h2>
       <div className="container my-5">
 
-        <div className="row align-items-center text-align-justify">
+        <div className="row align-items-center">
 
           {/* Kolom kiri - Gambar1 */}
           <div className="col-12 col-md-6 text-center mb-4 mb-md-0">
@@ -46,18 +48,18 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi1 */}
-          <div className="col-12 col-md-6 text-justify">
-            <h4 className="mb-3">
+          <div className="col-12 col-md-6">
+            <h4 className="mb-3 fw-bold">
               1. Huruf H (Hood)
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
               Huruf H melambangkan kekuatan, kebersamaan, dan fondasi komunitas. Bentuknya yang kokoh menggambarkan keteguhan prinsip serta semangat solidaritas yang selalu dijaga oleh Hood Agent sejak awal berdiri. Elemen ini merepresentasikan “Hood” — simbol persaudaraan, komunitas, dan lingkungan yang saling mendukung, baik bagi pelanggan sipil maupun anggota kepolisian.
             </p>
               <br />
-            <h4 className="mb-3">
+            <h4 className="mb-3 fw-bold">
               2. Huruf A (Agent)
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
               Huruf A menjadi simbol agen perubahan, mencerminkan semangat aktif, progresif, dan kreatif dalam menghadirkan desain yang otentik. Bentuknya yang mengarah ke atas menggambarkan ambisi dan visi jangka panjang, sejalan dengan semangat Hood Agent untuk terus berkembang sebagai brand lokal yang inovatif. Huruf A juga mempertegas identitas “Agent” sebagai pelaku yang berperan nyata dalam dunia desain dan apparel bertema kepolisian.
             </p>
           </div>
@@ -68,11 +70,11 @@ const OurStory = () => {
         <div className="row align-items-center mt-4">
 
           {/* Kolom kiri - Deskripsi2 */}
-          <div className="col-12 col-md-6 order-2 order-md-1 text-justify">
-            <h4 className="mb-3">
+          <div className="col-12 col-md-6 order-2 order-md-1">
+            <h4 className="mb-3 fw-bold">
               3. Simbol Bintara Tinggi 
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
               Simbol Bintara Tinggi disematkan sebagai bentuk penghormatan terhadap struktur dan kehormatan dalam tubuh Kepolisian Republik Indonesia. Elemen ini melambangkan kepemimpinan, disiplin, dan tanggung jawab, yang menjadi nilai penting dalam setiap lini produk Hood Agent. Simbol ini menjadi pengingat bahwa setiap karya yang dihasilkan membawa nilai loyalitas dan semangat Bhayangkara.
             </p>
           </div>
@@ -111,11 +113,11 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi3 */}
-          <div className="col-12 col-md-6 text-justify">
-            <h4 className="mb-3">
+          <div className="col-12 col-md-6 ">
+            <h4 className="mb-3 fw-bold">
               4. Kubah Masjid
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
              Bentuk kubah masjid yang menyatu di bagian atas logo mengandung makna spiritual yang mendalam — selalu bertakwa kepada Tuhan Yang Maha Esa. Kubah ini menjadi representasi bahwa setiap langkah dan karya Hood Agent tidak lepas dari nilai keikhlasan, kejujuran, dan rasa syukur. Filosofi ini menjadi dasar moral dalam menjalankan bisnis yang beretika dan penuh makna.
             </p>
           </div>
@@ -126,11 +128,11 @@ const OurStory = () => {
         <div className="row align-items-center mt-4">
 
           {/* Kolom kiri - Deskripsi4 */}
-          <div className="col-12 col-md-6 order-2 order-md-1 text-justify">
-            <h4 className="mb-3">
+          <div className="col-12 col-md-6 order-2 order-md-1">
+            <h4 className="mb-3 fw-bold">
               5. Gaya Romawi/Klasik 
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
               Gaya Romawi klasik yang digunakan menambahkan nuansa elegan, abadi, dan berwibawa. Elemen serif pada huruf memberikan karakter kuat, menggambarkan keberlanjutan nilai dan komitmen Hood Agent dalam menjaga kualitas serta identitas brand sejak 2015. Nuansa klasik ini juga menandakan bahwa meski terus berkembang, Hood Agent tetap berpegang pada akar nilai dan prinsip yang sama.
             </p>
           </div>
@@ -167,11 +169,11 @@ const OurStory = () => {
           </div>
 
           {/* Kolom kanan - Deskripsi5 */}
-          <div className="col-12 col-md-6 text-justify">
-            <h4 className="mb-3">
+          <div className="col-12 col-md-6 ">
+            <h4 className="mb-3 fw-bold">
               6. Keseluruhan Komposisi
             </h4>
-            <p className="lead" style={{ margin: "0 auto" }}>
+            <p className="lead" style={{ textAlign: "justify", margin: "0 auto" }}>
               Secara keseluruhan, logo Hood Agent merepresentasikan perpaduan antara kekuatan, spiritualitas, dan profesionalitas. Setiap elemen memiliki filosofi yang saling melengkapi — menggambarkan perjalanan brand dari komunitas kreatif sederhana menjadi entitas profesional. Logo ini bukan sekadar simbol visual, melainkan cerminan jati diri dan perjalanan panjang Hood Agent dalam menghadirkan karya yang menggabungkan estetika desain, semangat nasionalisme, dan nilai religius yang luhur.
             </p>
           </div>
@@ -180,15 +182,18 @@ const OurStory = () => {
         <hr />
 
         {/* Timeline History */}
-        <h1 className="mt-5 text-center">Hood Agent Timeline History</h1>
-        <img 
-        src = {gambarTimeline}
-        alt = "Timeline Hood Agent"
-        style = {{
-          width: "100%",
-          height: "auto",
-          marginTop: "20px",
-        }}
+        <h2 className="fw-bold display-5 text-dark text-center mt-5">
+            Hood Agent <span style={{ color: "#CB3B0F" }}>Timeline Philosophy</span>
+        </h2>
+
+        <img
+          src={gambarTimeline}
+          alt="Timeline Hood Agent"
+          style={{
+            width: "100%",
+            height: "auto",
+            marginTop: "20px",
+          }}
         />
 
 

@@ -238,26 +238,26 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="fw-bold mb-3 display-6">
-                Want to See More Projects?
+                Want to See More Product?
               </h3>
               <p className="mb-4" style={{ opacity: 0.9, maxWidth: "600px", margin: "0 auto" }}>
-                Browse our complete catalog of projects and exclusive collections
+                Browse our complete catalog of products and exclusive collections
               </p>
               <Link
-                to="/projects"
+                to="/Catalog"
                 className="btn btn-light text-danger fw-semibold px-4 py-2 rounded-3 shadow-sm"
                 style={{
                   backgroundColor: "white",
                   transition: "0.3s",
                 }}
               >
-                View All Projects
+                View All Product
               </Link>
             </motion.div>
           </div>
         ) : (
           <div className="text-center py-5">
-            <p className="text-secondary fs-5">No projects available</p>
+            <p className="text-secondary fs-5">No Product available</p>
           </div>
         )}
       </Container>

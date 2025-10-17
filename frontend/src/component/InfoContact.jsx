@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaWhatsapp, FaInstagram, FaTiktok, FaShopify } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaTiktok, FaShopify, FaYoutube } from "react-icons/fa";
 import Logo from "../assets/LOGO.png";
 import "../style/InfoContact.css";
 
@@ -21,31 +21,43 @@ function Footer() {
           />
           <div className="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
             <a
-              href="https://wa.me/6285352546060"
+              href="https://wa.me/message/IONCXXUB3M4DF1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white"
             >
               <FaWhatsapp />
             </a>
+
             <a
-              href="https://www.instagram.com/hoodagent.id"
+              href="https://www.instagram.com/hoodagent_bhapri/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white"
             >
               <FaInstagram />
             </a>
+
             <a
-              href="https://www.tiktok.com/@hoodagent"
+              href="https://www.youtube.com/@hoodagent/featured"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+            >
+              <FaYoutube />
+            </a>
+
+            <a
+              href="https://vm.tiktok.com/ZM284QrUd"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white"
             >
               <FaTiktok />
             </a>
+
             <a
-              href="https://hoodagent.myshopify.com"
+              href="https://shopee.co.id/hoodagent_"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white"

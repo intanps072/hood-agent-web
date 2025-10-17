@@ -1,0 +1,257 @@
+{   
+
+    "admins": [
+          {
+              "id": 1,
+              "username": "admin Hood Agent",
+              "email": "admin@hoodagent.com",
+              "password": "admin"
+          }
+      ],
+
+    "products": [
+        {
+            "id": 1,
+            "name": "T-Shirt - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "T-Shirt",
+            "description": "A comfortable and stylish t-shirt for everyday wear.",
+            "price": 219.000,
+            "stock": 50,
+            "image": "TS.jpg"
+        },
+        {
+            "id": 2,
+            "name": "PoloShirt - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "PoloShirt",
+            "description": "A classic polo shirt that combines comfort and elegance.",
+            "price": 259.000,
+            "stock": 50,
+            "image": "PS.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Workshirt - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "Workshirt",
+            "description": "A durable workshirt designed for tough jobs and outdoor activities.",
+            "price": 339.000,
+            "stock": 50,
+            "image": "WS.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Jersey - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "Jersey",
+            "description": "A sporty jersey perfect for athletic activities and casual wear.",
+            "price": 349.000,
+            "stock": 50,
+            "image": "JS.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Jacket - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "Jacket",
+            "description": "A stylish jacket that provides warmth and protection from the elements.",
+            "price": 499.000,
+            "stock": 50,
+            "image": "JK.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Accessories - 5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "category": "Accessories",
+            "description": "A collection of accessories to complement your outfit.",
+            "price": 99.000,
+            "stock": 50,
+            "image": "AC.jpg"
+        }
+    ],
+
+    "catalog": [
+        {
+            "id": 1,
+            "name": "Alpha Backbone Hoodie",
+            "category": "Jacket",
+            "description": "A comfortable and stylish hoodie for everyday wear.",
+            "price": 350.000,
+            "stock": 20,
+            "image": "Alpha Backbone Hoodie.png"
+        },
+        {
+            "id": 2,
+            "name": "Bhayangkara Pride V1 T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 250.000,
+            "stock": 15,
+            "image": "Bhayangkara Pride V1 T-shirt.png"
+        },
+        {
+            "id": 3,
+            "name": "Bhayangkara Pride V2 T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 150.000,
+            "stock": 30,
+            "image": "Bhayangkara Pride V2 T-shirt.png"
+        },
+        {
+            "id": 4,
+            "name": "Bhayangkara Pride V3 Longsleeve",
+            "category": "T-Shirt",
+            "description": "A vibrant longsleeve that showcases your pride and spirit.",
+            "price": 250.000,
+            "stock": 25,
+            "image": "Bhayangkara Pride V3 Longsleeve.png"
+        },
+        {
+            "id": 5,
+            "name": "Brimob T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 200.000,
+            "stock": 10,
+            "image": "Brimob T-shirt.png"
+        },
+        {
+            "id": 6,
+            "name": "Crime Investigator Longsleeve",
+            "category": "T-Shirt",
+            "description": "A vibrant longsleeve that showcases your pride and spirit.",
+            "price": 250.000,
+            "stock": 5,
+            "image": "Crime Investigator Longsleeve.png"
+        },
+        {
+            "id": 7,
+            "name": "Extraordinary Crime T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 150.000,
+            "stock": 40,
+            "image": "Extraordinary Crime T-shirt.png"
+        },
+        {
+            "id": 8,
+            "name": "Hero Oversize T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant oversized t-shirt that showcases your pride and spirit.",
+            "price": 350.000,
+            "stock": 12,
+            "image": "Hero Oversize T-shirt.png"
+        },
+        {
+            "id": 9,
+            "name": "Medical Police T-shirt",
+            "category": "T-Shirt",
+            "description": "A durable tactical t-shirt designed for tough jobs and outdoor activities.",
+            "price": 350.000,
+            "stock": 8,
+            "image": "Medical Police T-shirt.png"
+        },
+        {
+            "id": 10,
+            "name": "Raksaka Samaja T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 300.000,
+            "stock": 18,
+            "image": "Raksaka Samaja T-shirt.png"
+        },
+        {
+            "id": 11,
+            "name": "Reserse Poloshirt",
+            "category": "PoloShirt",
+            "description": "A classic polo shirt that combines comfort and elegance.",
+            "price": 200.000,
+            "stock": 22,
+            "image": "Reserse Poloshirt.png"
+        },
+        {
+            "id": 12,
+            "name": "SSatya Haprabu T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 150.000,
+            "stock": 35,
+            "image": "SSatya Haprabu T-shirt.png"
+        },
+        {
+            "id": 13,
+            "name": "Sabhara Nation T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 100.000,
+            "stock": 45,
+            "image": "Sabhara Nation T-shirt.png"
+        },
+        {
+            "id": 14,
+            "name": "Tokubetsu Keisatsutai T-shirt",
+            "category": "T-Shirt",
+            "description": "A vibrant t-shirt that showcases your pride and spirit.",
+            "price": 150.000,
+            "stock": 28,
+            "image": "Tokubetsu Keisatsutai T-shirt.png"
+        },
+        {
+            "id": 15,
+            "name": "Traffic Poloshirt",
+            "category": "Poloshirt",
+            "description": "A vibrant poloshirt that showcases your pride and spirit.",
+            "price": 200.000,
+            "stock": 20,
+            "image": "Traffic Poloshirt.png"
+        },
+        {
+            "id": 16,
+            "name": "Pouch Handphone",
+            "category": "Accessories",
+            "description": "A vibrant pouch for your handphone that showcases your pride and spirit.",
+            "price": 150.000,
+            "stock": 32,
+            "image": "Pouch Handphone.png"
+        }
+    ],
+
+    "limited" : [],
+
+    "events": [
+        {
+            "id": 1,
+            "name": "5AILEND2A MAHE5A 6ALA 1ST ANNIVERSARY",
+            "date": "2024-12-31",
+            "location": "Garut, Indonesia",
+            "description": "Celebrate the 1st anniversary of 5AILEND2A MAHE5A 6ALA with exclusive products and special offers.",
+            "image": "event1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "HOOD AGENT GRAND OPENING",
+            "date": "2024-11-15",
+            "location": "Garut, Indonesia",
+            "description": "Join us for the grand opening of Hood Agent's new store in Bandung. Enjoy discounts and giveaways!",
+            "image": "event2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "SUMMER SALE EXTRAVAGANZA",
+            "date": "2024-06-01",
+            "location": "Online",
+            "description": "Kick off the summer with our biggest sale of the year! Up to 50% off on selected items.",
+            "image": "event3.jpg"
+        },
+        {
+            "id": 4,
+            "name": "BACK TO SCHOOL SPECIAL",
+            "date": "2024-08-15",
+            "location": "Garut, Indonesia",
+            "description": "Get ready for the new school year with our back-to-school collection. Special discounts for students!",
+            "image": "event4.jpg"
+        }
+
+    ]
+    
+
+
+    
+}
